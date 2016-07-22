@@ -16,7 +16,7 @@ namespace WordCounter.Objects
     {
       return _word;
     }
-    public void SetWord(newInput1)
+    public void SetWord(string newInput1)
     {
       _word = newInput1;
     }

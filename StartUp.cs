@@ -7,7 +7,7 @@ using Nancy.ViewEngines.Razor;
 
 namespace WordCounter
 {
-  public class RepeatCounter
+  public class Startup
   {
     public void Configure(IApplicationBuilder app)
     {

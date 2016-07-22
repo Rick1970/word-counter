@@ -16,14 +16,14 @@ Created in C# with atom text editor.  Used Nancy framework, and razor view engin
 ## Specifications
 | Behavior | Input Example | Output Example |
 | ------------- |:-------------:| -----:|
-|User inputs the letter "a" into field one | "a" | input is collected
-|The test will verify that the Getter is working.|
-|User inputs the letter "a" into field two | "a" | input is collected
-|The test will verify that the Getter is working for field two|
-|User inputs new character into field 1, 2 | "b" | new input is collected
-|The test will verify that the setter is working|
-|User data is saved for evaluation for field one, and two | "a", "a" |"a", "a" saved |
-|The test will verify that the save function is working|
+<!-- |User inputs the letter "a" into field one | "a" | input is collected
+|The test will verify that the Getter is working.| -->
+<!-- |User inputs the letter "a" into field two | "a" | input is collected
+|The test will verify that the Getter is working for field two| -->
+<!-- |User inputs new character into field 1, 2 | "b" | new input is collected
+|The test will verify that the setter is working| -->
+<!-- |User data is saved for evaluation for field one, and two | "a", "a" |"a", "a" saved | -->
+<!-- |The test will verify that the save function is working| -->
 |User inputs "a" into field one, and "a" into field two, and hits submit| "a" | 1|
 |This test will verify that a comparison is being made between field one, and field two; and a correct result of 1 is the output|
 |User inputs a single, longer word in field one, and two.| "cat" | 1 |
