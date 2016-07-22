@@ -32,5 +32,19 @@ namespace WordCounter.Objects
     {
       _instances.Clear();
     }
+    public static string CountRepeats(RepeatCounter input1, RepeatCounter input2)
+    {
+      string practice = "1";
+
+
+      if (input1.GetWord() == input2.GetWord())
+      {
+        return practice;
+      }
+      else
+      {
+        return "Not a Match";
+      }
+    }
 }
 }

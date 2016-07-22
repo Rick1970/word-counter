@@ -90,5 +90,19 @@ namespace WordCounter.Objects
         Assert.Equal(newRepeatCounter1, newItem[0]);
         Assert.Equal(newRepeatCounter2, newItem[1]);
       }
+      [Fact]
+      public void T8_RepeatCounterCompareAToAEquals1_true()
+      {
+        // arrange
+        RepeatCounter newRepeatCounter1 = new RepeatCounter("a");
+        newRepeatCounter1.Save();
+        RepeatCounter newRepeatCounter2 = new RepeatCounter("a");
+        newRepeatCounter2.Save();
+
+        // act
+        string result = RepeatCounter.CountRepeats(newRepeatCounter1, newRepeatCounter2);
+        // assert
+        Assert.Equal("1", result);
+      }
     }
   }
