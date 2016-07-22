@@ -76,15 +76,19 @@ namespace WordCounter.Objects
         Assert.Equal(newRepeatCounter, newItem[0]);
       }
       [Fact]
-      public void T7_RepeatCounterSaveCat_true()
+      public void T7_RepeatCounterSaveAInput1And2_true()
       {
         // arrange
-        RepeatCounter newRepeatCounter = new RepeatCounter("cat");
-        newRepeatCounter.Save();
+        RepeatCounter newRepeatCounter1 = new RepeatCounter("a");
+        newRepeatCounter1.Save();
+        RepeatCounter newRepeatCounter2 = new RepeatCounter("b");
+        newRepeatCounter2.Save();
+
         // act
         List<RepeatCounter> newItem = RepeatCounter.GetAll();
         // assert
-        Assert.Equal(newRepeatCounter, newItem[0]);
+        Assert.Equal(newRepeatCounter1, newItem[0]);
+        Assert.Equal(newRepeatCounter2, newItem[1]);
       }
     }
   }
