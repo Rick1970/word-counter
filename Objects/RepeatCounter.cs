@@ -1,55 +1,49 @@
 using System;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace WordCounter.Objects
 {
   public class RepeatCounter
 {
-    private string _word;
-    private static List<RepeatCounter> _instances = new List<RepeatCounter> {};
-
-    public RepeatCounter(string input1)
-    {
-      _word = input1;
-    }
-    public string GetWord()
-    {
-      return _word;
-    }
-    public void SetWord(string newInput1)
-    {
-      _word = newInput1;
-    }
-    public void Save()
-    {
-      _instances.Add(this);
-    }
-    public static List<RepeatCounter>GetAll()
-    {
-      return _instances;
-    }
-    public static void DeleteAll()
-    {
-      _instances.Clear();
-    }
+    private string _searchString;
+    private string _searchWord;
 
 
-    public static string CountRepeats(RepeatCounter input1, RepeatCounter input2)
+
+    public RepeatCounter(string searchString, string searchWord)
     {
-      int result = 0;
+      _searchString = searchString;
+      _searchWord = searchWord;
+    }
+    public string GetStringToSearch()
+    {
+      return _searchString;
+    }
+    public void SetStringToSearch(string newsearchString)
+    {
+      _searchString = newsearchString;
+    }
+    public string GetSearchWord()
+    {
+      return _searchWord;
+    }
+    public void SetSearchWord(string newSearchWord)
+    {
+      _searchWord = newSearchWord;
+    }
+
+
+
+    public string CountRepeats()
+    {
+      string result = "1";
       string result2 = "No Match.";
-      List<RepeatCounter> compare = RepeatCounter.GetAll();
-      string compare1 = compare.ToString();
-      string compare2 = input2.GetWord();
-      Console.WriteLine(compare1);
-      Console.WriteLine(compare2);
+      string userInput1 = this.GetStringToSearch();
+      string userInput2 = this.GetSearchWord();
 
-      foreach (var test in compare1)
+      if (userInput1 == userInput2)
       {
-
-      if (compare2 == compare1)
-      {
-        result += 1;
+        return result;
       }
       else
       {
@@ -57,7 +51,6 @@ namespace WordCounter.Objects
       }
 
     }
-    return null;
-}
+
 }
 }
