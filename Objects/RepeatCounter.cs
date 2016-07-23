@@ -24,7 +24,7 @@ namespace WordCounter.Objects
     {
       _instances.Add(this);
     }
-    public static List<RepeatCounter> GetAll()
+    public static List<RepeatCounter>GetAll()
     {
       return _instances;
     }
@@ -32,19 +32,32 @@ namespace WordCounter.Objects
     {
       _instances.Clear();
     }
+
+
     public static string CountRepeats(RepeatCounter input1, RepeatCounter input2)
     {
-      string practice = "1";
+      int result = 0;
+      string result2 = "No Match.";
+      List<RepeatCounter> compare = RepeatCounter.GetAll();
+      string compare1 = compare.ToString();
+      string compare2 = input2.GetWord();
+      Console.WriteLine(compare1);
+      Console.WriteLine(compare2);
 
-
-      if (input1.GetWord() == input2.GetWord())
+      foreach (var test in compare1)
       {
-        return practice;
+
+      if (compare2 == compare1)
+      {
+        result += 1;
       }
       else
       {
-        return "Not a Match";
+        return result2;
       }
+
     }
+    return null;
+}
 }
 }
