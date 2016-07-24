@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+// using System.Collections.Generic;
 using Xunit;
 using System;
 
@@ -68,60 +68,45 @@ namespace WordCounter.Objects
 
 
       [Fact]
-      public void T5_RepeatCounterAbIs0_true()
+      public void T5_RepeatCounterAbIsNoMatch_true()
+      {
+        // arrange
+        RepeatCounter newRepeatCounter = new RepeatCounter("a", "b");
+        // assert
+        Assert.Equal(0 ,newRepeatCounter.CountRepeats());
+
+      }
+      [Fact]
+      public void T6_RepeatCounterAAIs1_true()
+      {
+        // arrange
+        RepeatCounter newRepeatCounter = new RepeatCounter("a", "a");
+        // assert
+        Assert.Equal(1 ,newRepeatCounter.CountRepeats());
+      }
+      [Fact]
+      public void T7_RepeatCounterCatDogNoMatch_true()
       {
         // arrange
         RepeatCounter newRepeatCounter = new RepeatCounter("cat", "dog");
-
-
         // assert
-        Assert.Equal("1" ,newRepeatCounter.CountRepeats());
-
+        Assert.Equal(0 ,newRepeatCounter.CountRepeats());
       }
-      // [Fact]
-      // public void T9_RepeatCounterCompareCatToCatEquals1_true()
-      // {
-      //   // arrange
-      //   RepeatCounter newRepeatCounter1 = new RepeatCounter("cat");
-      //   newRepeatCounter1.Save();
-      //   RepeatCounter newRepeatCounter2 = new RepeatCounter("cat");
-      //   newRepeatCounter2.Save();
-      //
-      //   // act
-      //   string result = RepeatCounter.CountRepeats(newRepeatCounter1, newRepeatCounter2);
-      //   // assert
-      //   Assert.Equal("1", result);
-      // }
-      // [Fact]
-      // public void T10_RepeatCounterCompareCatToDogEquals0_true()
-      // {
-      //   // arrange
-      //   RepeatCounter newRepeatCounter1 = new RepeatCounter("cat");
-      //   newRepeatCounter1.Save();
-      //   RepeatCounter newRepeatCounter2 = new RepeatCounter("dog");
-      //   newRepeatCounter2.Save();
-      //
-      //   // act
-      //   string result = RepeatCounter.CountRepeats(newRepeatCounter1, newRepeatCounter2);
-      //   // assert
-      //   Assert.Equal("No Match.", result);
-      // }
-      // [Fact]
-      // public void T11_RepeatCounterCompareCatCatToCatEquals2_true()
-      // {
-      //   // arrange
-      //   RepeatCounter newRepeatCounter1 = new RepeatCounter("cat");
-      //   newRepeatCounter1.Save();
-      //   RepeatCounter newRepeatCounter2 = new RepeatCounter("dog");
-      //   newRepeatCounter2.Save();
-      //
-      //
-      //   // act
-      //   string result = RepeatCounter.CountRepeats(newRepeatCounter1, newRepeatCounter2);
-      //   // assert
-      //   Assert.Equal("1", result);
-      //   Console.WriteLine(newRepeatCounter1 );
-      //   Console.WriteLine(newRepeatCounter2);
-      // }
+      [Fact]
+      public void T8_RepeatCounterCatCatIs1_true()
+      {
+        // arrange
+        RepeatCounter newRepeatCounter = new RepeatCounter("cat", "cat");
+        // assert
+        Assert.Equal(1 ,newRepeatCounter.CountRepeats());
+      }
+      [Fact]
+      public void T9_RepeatCounterAaToAIs2_true()
+      {
+        // arrange
+        RepeatCounter newRepeatCounter = new RepeatCounter("a a", "a");
+        // assert
+        Assert.Equal(2 ,newRepeatCounter.CountRepeats());
+      }
     }
   }

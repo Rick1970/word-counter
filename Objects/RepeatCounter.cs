@@ -4,7 +4,7 @@ using System.Linq;
 namespace WordCounter.Objects
 {
   public class RepeatCounter
-{
+  {
     private string _searchString;
     private string _searchWord;
 
@@ -31,26 +31,28 @@ namespace WordCounter.Objects
     {
       _searchWord = newSearchWord;
     }
+    // public static void DeleteAll()
+    //    {
+    //      _searchString.Clear();
+    //      _searchWord.Clear();
+    //    }
 
 
+    public int CountRepeats()
+   {
+     string test1 = this.GetSearchWord();
+     string[] test2 = this.GetStringToSearch().Split(' ');
 
-    public string CountRepeats()
-    {
-      string result = "1";
-      string result2 = "No Match.";
-      string userInput1 = this.GetStringToSearch();
-      string userInput2 = this.GetSearchWord();
+     int counter = 0;
 
-      if (userInput1 == userInput2)
-      {
-        return result;
-      }
-      else
-      {
-        return result2;
-      }
-
-    }
-
-}
+     foreach (string word in test2)
+     {
+       if (test1 == word)
+       {
+         counter++;
+       }
+     }
+     return counter;
+   }
+ }
 }
