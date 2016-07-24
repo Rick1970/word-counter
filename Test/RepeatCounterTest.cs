@@ -124,5 +124,37 @@ namespace WordCounter.Objects
         // assert
         Assert.Equal(2 ,newRepeatCounter.CountRepeats());
       }
+      [Fact]
+      public void T12_RepeatCounterCatDogCatToCatIs2_true()
+      {
+        // arrange
+        RepeatCounter newRepeatCounter = new RepeatCounter("cat dog cat", "cat");
+        // assert
+        Assert.Equal(2 ,newRepeatCounter.CountRepeats());
+      }
+      [Fact]
+      public void T13_RepeatCounterthisIsATestis_true()
+      {
+        // arrange
+        RepeatCounter newRepeatCounter = new RepeatCounter("this is a test", "is");
+        // assert
+        Assert.Equal(1 ,newRepeatCounter.CountRepeats());
+      }
+      [Fact]
+      public void T14_RepeatCounterIAmAmIIAmSearchAm_true()
+      {
+        // arrange
+        RepeatCounter newRepeatCounter = new RepeatCounter("am i i am am i", "am");
+        // assert
+        Assert.Equal(3 ,newRepeatCounter.CountRepeats());
     }
+    [Fact]
+    public void T15_RepeatCounterFindCapAndNonCapEquals2_true()
+    {
+      // arrange
+      RepeatCounter newRepeatCounter = new RepeatCounter("The cat and the dog", "the");
+      // assert
+      Assert.Equal(2 ,newRepeatCounter.CountRepeats());
   }
+}
+}

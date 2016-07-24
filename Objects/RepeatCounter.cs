@@ -31,17 +31,14 @@ namespace WordCounter.Objects
     {
       _searchWord = newSearchWord;
     }
-    // public static void DeleteAll()
-    //    {
-    //      _searchString.Clear();
-    //      _searchWord.Clear();
-    //    }
+
 
 
     public int CountRepeats()
    {
-     string test1 = this.GetSearchWord();
-     string[] test2 = this.GetStringToSearch().Split(' ');
+     string test1 = this.GetSearchWord().ToLower();
+     string[] test2 = this.GetStringToSearch().ToLower().Split(' ');
+
 
      int counter = 0;
 
