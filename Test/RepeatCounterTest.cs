@@ -108,5 +108,21 @@ namespace WordCounter.Objects
         // assert
         Assert.Equal(2 ,newRepeatCounter.CountRepeats());
       }
+      [Fact]
+      public void T10_RepeatCounterAbAToAIs2_true()
+      {
+        // arrange
+        RepeatCounter newRepeatCounter = new RepeatCounter("a b a", "a");
+        // assert
+        Assert.Equal(2 ,newRepeatCounter.CountRepeats());
+      }
+      [Fact]
+      public void T11_RepeatCounterCatCatToCatIs2_true()
+      {
+        // arrange
+        RepeatCounter newRepeatCounter = new RepeatCounter("cat cat", "cat");
+        // assert
+        Assert.Equal(2 ,newRepeatCounter.CountRepeats());
+      }
     }
   }
