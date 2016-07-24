@@ -8,8 +8,6 @@ namespace WordCounter.Objects
     private string _searchString;
     private string _searchWord;
 
-
-
     public RepeatCounter(string searchString, string searchWord)
     {
       _searchString = searchString;
@@ -32,24 +30,20 @@ namespace WordCounter.Objects
       _searchWord = newSearchWord;
     }
 
-
-
     public int CountRepeats()
-   {
-     string test1 = this.GetSearchWord().ToLower();
-     string[] test2 = this.GetStringToSearch().ToLower().Split(' ');
+    {
+      string test1 = this.GetSearchWord().ToLower();
+      string[] test2 = this.GetStringToSearch().ToLower().Split(' ');
+      int counter = 0;
 
-
-     int counter = 0;
-
-     foreach (string word in test2)
-     {
-       if (test1 == word)
-       {
-         counter++;
-       }
-     }
-     return counter;
-   }
- }
+      foreach (string word in test2)
+      {
+        if (test1 == word)
+        {
+          counter++;
+        }
+      }
+      return counter;
+    }
+  }
 }
